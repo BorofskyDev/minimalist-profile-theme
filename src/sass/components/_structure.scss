@@ -29,3 +29,16 @@
     padding: 4em 0;
     gap: 2em;
 }
+
+.contact {
+    padding: 4em 3.75em;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        'logo'
+        'links'
+        'contact';
+    place-items: center;
+}

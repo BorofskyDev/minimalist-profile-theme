@@ -1,0 +1,130 @@
+.contacts-content {
+  grid-area: logo;
+  width: 21.1875em;
+
+  &__cta {
+    margin: 1em auto;
+  }
+}
+
+.contacts-container {
+  grid-area: links;
+  width: 20.625em;
+  display: grid;
+  place-content: center;
+  place-items: center;
+
+  @include respond(tab) {
+    min-width: 36.5em;
+    margin: 0 auto;
+  }
+
+  &__list {
+    margin-top: -2em;
+    @include respond(tab) {
+    width: 100%;
+    display: grid;
+    gap: 2em;
+    grid-auto-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 0.4fr repeat(2, 1.3fr);
+    grid-template-areas: 
+        'header header'
+        'linkedin instagram'
+        'youtube github';
+  }
+  }
+
+  &__contacts-box {
+    margin: 2em 0;
+    padding: 1.5em;
+    display: flex;
+    gap: 1.2em;
+
+    &--icon {
+      height: 1.6em;
+      width: 1.6em;
+      
+    }
+
+    &--name {
+      font-size: var(--fs-500);
+      color: hsl(var(--color-primary));
+    }
+  }
+}
+
+.contact-form {
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+
+    &--label {
+      font-size: var(--fs-500);
+    }
+
+    &--input {
+      padding: 1em 2em;
+      background-color: hsl(var(--color-dark-1));
+      border: none;
+      color: inherit;
+      border-radius: var(--border-radius);
+      transition: var(--transition-main);
+
+      &:active,
+      &:focus {
+        outline: 0.0625em solid hsl(var(--color-primary));
+        box-shadow: var(--box-shadow-lg);
+      }
+    }
+
+    &--textarea {
+      padding: 1em 2em;
+      background-color: hsl(var(--color-dark-1));
+      border: none;
+      color: inherit;
+      border-radius: var(--border-radius);
+      transition: var(--transition-main);
+
+      &:active,
+      &:focus {
+        outline: 0.0625em solid hsl(var(--color-primary));
+        box-shadow: var(--box-shadow-lg);
+      }
+    }
+  }
+
+  &__btn {
+    width: 8.625em;
+    margin: 2em auto;
+    padding: 1em 1.8em;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: hsl(var(--color-dark-1));
+    font-family: var(--font-background);
+    text-transform: uppercase;
+    color: hsl(var(--color-primary) / 0.8);
+    text-shadow: 0 0 0.0625em hsl(var(--color-light));
+    letter-spacing: var(--ls-lg);
+    transition: var(--transition-main);
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--color-primary));
+      text-shadow: 0 0 0.2em hsl(var(--color-light)),
+        0 0 0.6em hsl(var(--color-primary));
+      box-shadow: var(--box-shadow-lg);
+    }
+
+  }
+}
