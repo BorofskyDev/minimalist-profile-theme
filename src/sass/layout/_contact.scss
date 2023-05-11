@@ -1,6 +1,7 @@
 .contacts-content {
   grid-area: logo;
   width: 21.1875em;
+  height: 6.625em;
 
   &__cta {
     margin: 1em auto;
@@ -10,9 +11,11 @@
 .contacts-container {
   grid-area: links;
   width: 20.625em;
+  height: 18.4375em;
   display: grid;
   place-content: center;
   place-items: center;
+  margin-top: -8em;
 
   @include respond(tab) {
     min-width: 36.5em;
@@ -116,6 +119,7 @@
     color: hsl(var(--color-primary) / 0.8);
     text-shadow: 0 0 0.0625em hsl(var(--color-light));
     letter-spacing: var(--ls-lg);
+    cursor: pointer;
     transition: var(--transition-main);
 
     &:hover,
