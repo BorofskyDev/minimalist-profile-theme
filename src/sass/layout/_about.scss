@@ -1,0 +1,52 @@
+.about {
+    height: 28.8125em;
+    min-width: 28.125em;
+    padding: 4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    @include respond(tab){
+        min-width: 44em;
+        max-height: 15.8125em;
+        flex-direction: row;
+    }
+
+    @include respond(desktop){
+        min-width: 90em;
+        height: 14.5em;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    &__blobs {
+        @include blob;
+
+        &--svg1 {
+            @include svg1;
+            width: 4.5em;
+            height: 4.47em;
+        }
+
+        &--svg2 {
+            @include svg2;
+            width: 4.5625em;
+            height: 4.47em;
+        }
+    }
+
+    &__content {
+        max-width: 56.5em;
+        font-weight: 400;
+        font-size: var(--fs-500);
+        line-height: 1.5;
+        text-align: justify;
+        flex: 2;
+
+        @include respond(tab){
+            width: 28em;
+        }
+    }
+}

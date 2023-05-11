@@ -1,0 +1,82 @@
+.projects-container {
+  display: flex;
+  //   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  align-content: center;
+
+  &__project {
+    height: 20em;
+    width: 20em;
+    position: relative;
+    display: grid;
+    place-content: center;
+    place-items: center;
+  }
+
+  &__image {
+    position: absolute;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    background: hsl(var(--color-dark-2) / 0.95);
+    transition: var(--transition-main);
+
+    @include respond(desktop) {
+        opacity: 0;
+
+        &:hover,
+        &:focus {
+            opacity: 1;
+        }
+    }
+  }
+
+  &__title {
+    font-size: var(--fs-700);
+    font-weight: 700;
+    color: hsl(var(--color-primary));
+  }
+
+  &__tech {
+    font-family: var(--font-background);
+    font-size: var(--fs-300);
+    margin: 1em auto;
+    padding-bottom: 1em;
+    border-bottom: 0.0625em solid hsl(var(--color-primary));
+  }
+
+  &__buttons {
+    width: 18em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__link {
+    padding: 0.8em 1.5em;
+    background-color: hsl(var(--color-dark-1));
+    margin: 1em;
+    transition: var(--transition-main);
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--color-primary));
+      box-shadow: 0 0 0.1875em hsl(var(--color-primary)),
+        0 0 0.5em hsl(var(--color-secondary));
+    }
+  }
+}

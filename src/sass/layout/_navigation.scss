@@ -1,0 +1,131 @@
+.nav {
+  position: fixed;
+  background: hsl(var(--color-dark-2) / 0.9);
+  backdrop-filter: blur(0.25em);
+  height: 80%;
+  top: 5em;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+  transform: translateY(-110%);
+  transition: var(--transform-1);
+
+  @include respond(tab) {
+    position: relative;
+    backdrop-filter: none;
+    background: none;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  &__list {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+
+    @include respond(tab) {
+      flex-direction: row;
+      font-size: var(--fs-600);
+      justify-content: space-evenly;
+      gap: 2em;
+      margin-top: -0.6em;
+      margin-right: 4em;
+    }
+
+    @include respond(desktop) {
+        justify-content: flex-end;
+    }
+  }
+
+  &__link {
+    font-size: var(--fs-600);
+    font-weight: 700;
+    line-height: 1.5rem;
+    transition: var(--transform-1);
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--color-primary));
+      text-shadow: 0 0 0.0625em hsl(var(--color-light));
+    }
+  }
+}
+
+.nav-toggle {
+  padding: 0.5em;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  z-index: 1000;
+
+  @include respond(tab) {
+    display: none;
+  }
+}
+
+.nav-open .nav-toggle {
+  @include respond(tab) {
+    margin-right: 4em;
+  }
+}
+
+.nav-open .nav {
+  transform: translateY(0);
+}
+
+.nav-open .hamburger {
+  transform: rotate(0.625turn);
+
+  &::before {
+    transform: rotate(90deg) translateX(-0.475em);
+  }
+
+  &::after {
+    opacity: 0;
+  }
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  &::before {
+    top: 0.3275em;
+  }
+
+  &::after {
+    bottom: 0.375em;
+  }
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  background: hsl(var(--color-light));
+  width: 1.5em;
+  height: 0.1875em;
+  margin: 0.15em 0;
+  border-radius: 0375em;
+  transition: transform 250ms ease-in-out;
+}

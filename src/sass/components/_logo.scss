@@ -1,0 +1,11 @@
+.logo {
+  font-family: var(--font-heading);
+  font-size: var(--fs-700);
+  color: hsl(var(--color-primary));
+  letter-spacing: var(--ls-sm);
+  z-index: 50;
+  
+  span {
+    color: hsl(var(--color-light));
+  }
+}

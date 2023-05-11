@@ -1,0 +1,125 @@
+.hero {
+  position: relative;
+  min-width: 28.125em;
+  min-height: 60em;
+
+  &__background-text {
+    position: absolute;
+    margin: 0 auto;
+    top: 55%;
+    transform: translateY(-55%);
+    padding: 1.15625em;
+    font-family: var(--font-background);
+    font-size: var(--fs-200);
+    color: hsl(var(--color-primary) / 0.3);
+
+    @include respond(tab) {
+      top: 52%;
+      transform: translateY(-52%);
+      margin: 0 2.344em;
+    }
+
+    @include respond(desktop) {
+      top: 35%;
+      left: 48%;
+      max-width: 90%;
+      max-height: 35.9375em;
+    }
+  }
+
+  &__container {
+    min-width: 19.625em;
+    height: 41.25em;
+    margin: 4em auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8em;
+
+    @include respond(tab) {
+      max-width: 35.5em;
+      gap: 12em;
+    }
+
+    @include respond(desktop) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      max-width: 71.25em;
+      margin: 0 auto;
+    }
+  }
+
+  &__content {
+    width: 19.625em;
+    height: 4.6875em;
+    margin: 4.25em;
+
+    @include respond(tab) {
+      width: 28em;
+      margin: 0 auto;
+    }
+
+    @include respond(desktop) {
+      transform: translateY(-50%);
+    }
+
+    &--title {
+      font-weight: 900;
+      font-size: var(--fs-900);
+      color: hsl(var(--color-primary));
+      margin-bottom: 0.4em;
+    }
+
+    &--subtitle {
+      font-weight: 700;
+      font-size: var(--fs-700);
+      margin-bottom: 0.4em;
+    }
+
+    &--desc {
+      font-size: var(--fs-600);
+    }
+  }
+
+  &__profile-pic {
+    @include blob;
+
+    &--image {
+      position: absolute;
+      width: 16.375em;
+      // height: 17.25em;
+      object-fit: cover;
+      object-position: left;
+      clip-path: url('#blob2');
+      z-index: 2;
+
+      @include respond(tab) {
+        width: 23.3125em;
+      }
+    }
+
+    &--svg1 {
+      @include svg1;
+      width: 17.375em;
+      height: 17.25em;
+
+      @include respond(tab) {
+        height: 23.1875em;
+        width: 23.3125em;
+      }
+    }
+
+    &--svg2 {
+      @include svg2;
+      width: 17.375em;
+      height: 17.25em;
+
+      @include respond(tab) {
+        width: 23.3125em;
+        height: 23.1875em;
+      }
+    }
+  }
+}

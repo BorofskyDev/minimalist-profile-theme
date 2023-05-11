@@ -1,0 +1,49 @@
+:root {
+    // Colors
+
+    --color-primary: 194 100% 51%;
+    // #05C5FF
+    --color-secondary: 194 90% 34%;
+    // #0980A5
+    --color-light: 194 56% 95%;
+    // #FAF2F0
+    --color-dark-1: 194 15% 12%;
+    // #141414
+    --color-dark-2: 194 8% 10%;
+    // #0A0A0A
+
+    // Typography
+    --font-regular: 'Lato', sans-serif;
+    --font-background: 'Inconsolata', monospace;
+    --font-heading: 'Anton', sans-serif;
+
+    --ls-sm: 0.0625em;
+    --ls-md: 0.125em;
+    --ls-lg: 0.5em;
+
+    --fs-900: 2.5rem;
+    --fs-800: 2.25rem;
+    --fs-700: 2rem;
+    --fs-600: 1.5rem;
+    --fs-500: 1.25rem;
+    --fs-400: 1.125rem;
+    --fs-300: 1rem;
+    --fs-200: 0.75rem;
+
+    @include respond(tab) {
+        --fs-900: 4rem;
+        --fs-700: 2.5rem;
+        --fs-200: 1.125em
+    }
+    
+    // Transformations
+
+    --transform-1: all 500ms cubic-bezier(0.5, 0, 0.5, 1);
+
+    --transition-main: all 0.6s ease-in-out;
+
+    --border-radius: 0.625em;
+
+}
+
+
