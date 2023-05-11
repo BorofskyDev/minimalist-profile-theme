@@ -22,6 +22,10 @@
     margin: 0 auto;
   }
 
+  @include respond(desktop) {
+    align-self: center;
+  }
+
   &__list {
     margin-top: -2em;
     @include respond(tab) {
@@ -129,6 +133,9 @@
         0 0 0.6em hsl(var(--color-primary));
       box-shadow: var(--box-shadow-lg);
     }
+  }
 
+  @include respond(desktop) {
+    align-self: center;
   }
 }

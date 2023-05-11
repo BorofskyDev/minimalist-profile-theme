@@ -42,4 +42,13 @@
         'links'
         'contact';
     place-items: center;
+
+    @include respond(desktop) {
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            'logo contact links';
+        place-items: start;
+        padding-top: 12em;
+    }
 }
